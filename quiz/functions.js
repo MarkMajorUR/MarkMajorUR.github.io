@@ -28,5 +28,7 @@ function addQuestion (questionNumber) {
     li.append(document.createTextNode(answer));
     answers.append(li);
   }
+
+  return questionNumber++;
 }
 

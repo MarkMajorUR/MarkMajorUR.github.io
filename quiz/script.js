@@ -17,11 +17,7 @@ startBnt.addEventListener("click", function(event) {
     startBnt.style.display = "none";
   }
   
-  if (questionNumber < 5) {
-    questionNumber = addQuestion(questionNumber);
-  }
-  
-
+  var questionNumber = addQuestion(questionNumber);
 
   setInterval(function() {
     secondsLeft--;
@@ -41,10 +37,15 @@ startBnt.addEventListener("click", function(event) {
 answers.addEventListener("click", function(event) {
   event.preventDefault();
 
-  var response = response(event.target);
+  var originElement = event.target;
+  var response = response(originElement.textContent);
   if (!responses) {
     secondsLeft -= 20; 
+  } else {
+
   }
 
-
+  if (questionNumber < 5) {
+    questionNumber = addQuestion(questionNumber);
+  }
 });
