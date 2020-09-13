@@ -4,6 +4,7 @@ var answers = document.getElementById("answers");
 var questions = document.getElementById("questions");
 
 var secondsLeft = 90;
+var questionNumber = 0;
 var count = localStorage.getItem("score");
 
 // Time Counter
@@ -16,19 +17,11 @@ startBnt.addEventListener("click", function(event) {
     startBnt.style.display = "none";
   }
   
-  // add first question
-  var question = document.createElement("div");
-  question.append(document.createTextNode("What is your name?"));
-  question.classList.add("question");
-  questions.prepend(question);
-
-  // add first answer choices
-  var responses = ["My name is Sir Gawain of Camelot", "My name is Sir Bedivere of Camelot", "My name is Sir Lancelot of Camelot", "Author King of the Britons"]
-  for (const answer of responses) {
-    var li = document.createElement("li");
-    li.append(document.createTextNode(answer));
-    answers.append(li);
+  if (questionNumber < 5) {
+    questionNumber = addQuestion(questionNumber);
   }
+  
+
 
   setInterval(function() {
     secondsLeft--;
