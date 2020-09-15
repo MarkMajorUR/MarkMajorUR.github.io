@@ -2,9 +2,9 @@ var startBnt = document.querySelector(".start");
 var time = document.getElementById("time");
 var answers = document.getElementById("answers");
 var secondsLeft = 90;
-window.sessionStorage.setItem("question number", 0);
-
 var questions = document.getElementById("questions");
+
+window.sessionStorage.setItem("question number", 0);
 
 // Time Counter event
 startBnt.addEventListener("click", function(event) {
@@ -22,10 +22,11 @@ startBnt.addEventListener("click", function(event) {
     secondsLeft--;
     time.textContent = secondsLeft + " Time Left";
 
-    // if(secondsLeft === 0) {
-    //   clearInterval(timerInterval);
-    //   sendMessage();
-    // }
+    if(secondsLeft === 0) {
+      clearInterval(1000);
+      submitScore(secondsLeft);
+      secondsLeft = 90;
+    }
 
   }, 1000);
 
@@ -49,6 +50,7 @@ answers.addEventListener("click", function(event) {
     questionNumber = addQuestion(questionNumber);
   } else {
     window.sessionStorage.setItem("question number", 0);
-    window.location.href = "./highscore.html";
+    submitScore(secondsLeft);
+    secondsLeft = 90;
   }
 });

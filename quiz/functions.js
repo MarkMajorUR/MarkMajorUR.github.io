@@ -55,3 +55,30 @@ function addQuestion (questionNumber) {
   window.sessionStorage.setItem("question number", current_question_number);
 }
 
+// submits a score
+function submitScore(score) {
+  document.querySelector(".quiz").classList.toggle("hidden");
+  document.querySelector(".score").classList.toggle("hidden");
+  var name = document.querySelector("#name");
+  var submit = document.querySelector("#submit-button");
+
+  // score submission event
+  submit.addEventListener("click", function(event){
+    event.preventDefault();
+    var scores = localStorage.getItem("scores");
+    var new_score = [name.value.trim(), score];
+    var new_score_string = JSON.stringify(new_score);
+    console.log(new_score_string);
+
+    // Prevents addition of null to local storage string
+    if (!scores && scores !== "") {
+      scores += new_score+",";
+      localStorage.setItem("scores", scores);
+    } else {
+      localStorage.setItem("scores", new_score);
+    }
+
+    console.log(localStorage.getItem("scores"));
+    // window.location.href = "./highscore.html";
+  });
+}
