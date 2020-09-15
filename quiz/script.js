@@ -17,7 +17,7 @@ startBnt.addEventListener("click", function(event) {
     startBnt.style.display = "none";
   }
   
-  var questionNumber = addQuestion(questionNumber);
+  var questionNumber = addQuestions(questionNumber);
 
   setInterval(function() {
     secondsLeft--;
@@ -46,6 +46,6 @@ answers.addEventListener("click", function(event) {
   }
 
   if (questionNumber < 5) {
-    questionNumber = addQuestion(questionNumber);
+    questionNumber = addQuestions(questionNumber);
   }
 });
