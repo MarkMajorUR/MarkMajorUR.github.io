@@ -16,7 +16,7 @@ startBnt.addEventListener("click", function(event) {
     startBnt.style.display = "none";
   }
   
-  addQuestions(window.sessionStorage.getItem("question number"));
+  addQuestion(window.sessionStorage.getItem("question number"));
 
   setInterval(function() {
     secondsLeft--;
@@ -45,8 +45,10 @@ answers.addEventListener("click", function(event) {
 
   var questionNumber = window.sessionStorage.getItem("question number");
   if (questionNumber < 5) {
-    questionNumber = addQuestions(questionNumber);
+    removeQuestion();
+    questionNumber = addQuestion(questionNumber);
   } else {
     window.sessionStorage.setItem("question number", 0);
+    window.location.href = "./highscore.html";
   }
 });

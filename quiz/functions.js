@@ -4,7 +4,7 @@ function checkAnswer (answer) {
                    "What is your quest?": "To seek the Holy Grail",
                    "What is your favourite colour?": "Blue",
                    "What is the air speed velocity of an unladen swallow?": "African or European Swallow?",
-                   "Which Movie directed by Terry Gilliam are these questions a reference to?": "Montey Python and the Holy Grail"
+                   "Which Movie directed by Terry Gilliam are these questions a reference to?": "Monty Python and the Holy Grail"
                   };
   var question = document.querySelector(".question");
   var correct_answer = questions[question.textContent];
@@ -14,8 +14,15 @@ function checkAnswer (answer) {
   return false;
 }
 
+function removeQuestion() {
+  var questions = document.querySelector(".question");
+  var answers = document.getElementById("answers");
+  questions.remove();
+  answers.innerHTML = "";
+}
+
 // adds questions and answer choices
-function addQuestions (questionNumber) {
+function addQuestion (questionNumber) {
   var answers = document.getElementById("answers");
   var questions = document.getElementById("questions");
 
@@ -26,7 +33,7 @@ function addQuestions (questionNumber) {
   ["To replace the Holy Hand Grenade of Antioch", "To seek the Holy Grail", "to acquire a shrubbery for the the knight who say Ni", "To defeat the dastardly Frenchmen"],
   ["Cyan", "Magenta", "Yellow", "Blue"],
   ["343 m/s", "African or European Swallow?", "299,792,458 m/s", "9.8 m/s"],
-  ["Time Bandits", "Monty Python's and the Life of Brian", "Montey Python and the Holy Grail", "Brazil"]];
+  ["Time Bandits", "Monty Python's and the Life of Brian", "Monty Python and the Holy Grail", "Brazil"]];
   
   // add questions
   var question = question_choices[questionNumber];
@@ -44,6 +51,7 @@ function addQuestions (questionNumber) {
   }
 
   var current_question_number = window.sessionStorage.getItem("question number");
-  window.sessionStorage.setItem("question number", current_question_number++);
+  current_question_number++;
+  window.sessionStorage.setItem("question number", current_question_number);
 }
 
