@@ -71,14 +71,11 @@ function submitScore(score) {
     console.log(new_score_string);
 
     // Prevents addition of null to local storage string
-    if (!scores && scores !== "") {
+    if (scores !== "" && scores !== null) {
       scores += new_score+",";
       localStorage.setItem("scores", scores);
     } else {
       localStorage.setItem("scores", new_score);
     }
-
-    console.log(localStorage.getItem("scores"));
-    // window.location.href = "./highscore.html";
   });
 }
