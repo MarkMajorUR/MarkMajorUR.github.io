@@ -1,13 +1,13 @@
 // returns if a question was answered correctly or not
-function response (answer) {
+function checkAnswer (answer) {
   var questions = {"What is your name?": "Author King of the Britons",
                    "What is your quest?": "To seek the Holy Grail",
                    "What is your favourite colour?": "Blue",
                    "What is the air speed velocity of an unladen swallow?": "African or European Swallow?",
                    "Which Movie directed by Terry Gilliam are these questions a reference to?": "Montey Python and the Holy Grail"
                   };
-  var question = document.querySelector(".question")[0].textContent;
-  var correct_answer = questions[question];
+  var question = document.querySelector(".question");
+  var correct_answer = questions[question.textContent];
   if (correct_answer == answer) {
     return true;
   }
@@ -37,8 +37,6 @@ function addQuestions (questionNumber) {
 
   // add answer choices  
   var current_answers = responses[questionNumber];
-  console.log(questionNumber);
-  console.log(current_answers);
   for (const answer of current_answers) {
     var li = document.createElement("li");
     li.append(document.createTextNode(answer));

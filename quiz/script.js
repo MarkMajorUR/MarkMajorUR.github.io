@@ -29,7 +29,6 @@ startBnt.addEventListener("click", function(event) {
 
   }, 1000);
 
-
 });
 
 // Answer Question event
@@ -37,15 +36,16 @@ answers.addEventListener("click", function(event) {
   event.preventDefault();
 
   var originElement = event.target;
-  var response = response(originElement.textContent);
+  var response = checkAnswer(originElement.textContent);
   if (!response) {
     secondsLeft -= 20; 
   } else {
 
   }
 
+  var questionNumber = window.sessionStorage.getItem("question number");
   if (questionNumber < 5) {
-    questionNumber = addQuestions(window.sessionStorage.getItem("question number"));
+    questionNumber = addQuestions(questionNumber);
   } else {
     window.sessionStorage.setItem("question number", 0);
   }
