@@ -1,10 +1,10 @@
-// returns if a question was answered correctly
+// returns if a question was answered correctly or not
 function response (answer) {
   var questions = {"What is your name?": "Author King of the Britons",
                    "What is your quest?": "To seek the Holy Grail",
                    "What is your favourite colour?": "Blue",
                    "What is the air speed velocity of an unladen swallow?": "African or European Swallow?",
-                   "Which Movie directed by Terry Gilliam is this from?": "Montey Python and the Holy Grail"
+                   "Which Movie directed by Terry Gilliam are these questions a reference to?": "Montey Python and the Holy Grail"
                   };
   var question = document.querySelector(".question")[0].textContent;
   var correct_answer = questions[question];
@@ -14,26 +14,38 @@ function response (answer) {
   return false;
 }
 
+// adds questions and answer choices
 function addQuestions (questionNumber) {
-  // add first question
-  var question = document.createElement("div");
-  question.append(document.createTextNode("What is your name?"));
-  question.classList.add("question");
-  questions.prepend(question);
+  var answers = document.getElementById("answers");
+  var questions = document.getElementById("questions");
 
-  // add first answer choices
+  var question_choices = ["What is your name?", "What is your quest?", "What is your favourite colour?", "What is the air speed velocity of an unladen swallow?", "Which Movie directed by Terry Gilliam are these questions a reference to?"];
+
+  // answer choices
   var responses = [["My name is Sir Gawain of Camelot", "My name is Sir Bedivere of Camelot", "My name is Sir Lancelot of Camelot", "Author King of the Britons"],
   ["To replace the Holy Hand Grenade of Antioch", "To seek the Holy Grail", "to acquire a shrubbery for the the knight who say Ni", "To defeat the dastardly Frenchmen"],
   ["Cyan", "Magenta", "Yellow", "Blue"],
   ["343 m/s", "African or European Swallow?", "299,792,458 m/s", "9.8 m/s"],
-  ["Time Bandits", "Monty Python's and the Life of Brian", "Montey Python and the Holy Grail", "Brazil"]]
+  ["Time Bandits", "Monty Python's and the Life of Brian", "Montey Python and the Holy Grail", "Brazil"]];
   
-  for (const answer of responses[questionNumber]) {
+  // add questions
+  var question = question_choices[questionNumber];
+  var container = document.createElement("div");
+  container.append(document.createTextNode(question));
+  container.classList.add("question");
+  questions.prepend(container);
+
+  // add answer choices  
+  var current_answers = responses[questionNumber];
+  console.log(questionNumber);
+  console.log(current_answers);
+  for (const answer of current_answers) {
     var li = document.createElement("li");
     li.append(document.createTextNode(answer));
     answers.append(li);
   }
 
-  return questionNumber++;
+  var current_question_number = window.sessionStorage.getItem("question number");
+  window.sessionStorage.setItem("question number", current_question_number++);
 }
 
