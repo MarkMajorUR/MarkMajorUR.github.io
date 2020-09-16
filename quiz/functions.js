@@ -75,7 +75,7 @@ function submitScore(score) {
       scores += new_score+",";
       localStorage.setItem("scores", scores);
     } else {
-      localStorage.setItem("scores", new_score);
+      localStorage.setItem("scores", new_score+",");
     }
   });
 }

@@ -1,20 +1,22 @@
 var responses = localStorage.getItem("scores");
-results = JSON.parse(responses);
-console.log(results);
+var results = responses.split(",");
+// remove left over blank item from conversion
+results.pop();
 
-// var answers = document.getElementById("answers");
-// var questions = document.getElementById("questions");
+var scores = document.getElementById("scores");
 
-// var question = question_choices[questionNumber];
-// var container = document.createElement("div");
-// container.append(document.createTextNode(question));
-// container.classList.add("question");
-// questions.prepend(container);
+for (var n = 0; n < results.length; n+=2) {
+  var li = document.createElement('li');
+  li.append(document.createTextNode(results[n]+": "+results[n+1]));
+  li.classList.add("list-group-item");
+  scores.append(li);
+}
 
-// // add answer choices  
-// var current_answers = responses[questionNumber];
-// for (const answer of current_answers) {
-//   var li = document.createElement("li");
-//   li.append(document.createTextNode(answer));
-//   answers.append(li);
-// }
+// reset high scores
+var reset = document.querySelector("#reset");
+reset.addEventListener("click", function(event){
+  event.preventDefault();
+  
+  var scores = localStorage.getItem("scores");
+  localStorage.clear();
+});
