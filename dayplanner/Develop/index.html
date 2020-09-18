@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container">
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th scope="col" width="15%"></th>
+            <th scope="col" width="75%"></th>
+            <th scope="col" width="10%"></th>
+          </tr>
+        </thead>
+        <tr class="table-secondary tableRow" data-hour="9">
+          <th scope="row" class="align-middle">9:00 am</th>
+          <td class="align-middle">
+            <textarea class="form-control" id="9amMessage" rows="3"></textarea>
+          </td>
+          <td class="align-middle save-btn" ><i class="fas fa-camera fa-2x" data-time="9am"></i></td> 
+        </tr>
+        <tr class="table-secondary tableRow" data-hour="10">
+          <th scope="row" class="align-middle">10:00 am</th>
+          <td class="align-middle">
+            <textarea class="form-control" id="10amMessage" rows="3"></textarea>
+          </td>
+          <td class="align-middle save-btn"><i class="fas fa-save" data-time="10am"></i></td>
+        </tr>
+        <tr class="table-secondary tableRow" data-hour="11">
+          <th scope="row" class="align-middle">11:00 am</th>
+          <td class="align-middle">
+            <textarea class="form-control" id="11amMessage" rows="3"></textarea>
+          </td>
+          <td class="align-middle save-btn"><i class="fas fa-save" data-time="11am"></i></td>
+        </tr>
+        <tr class="table-secondary tableRow" data-hour="12">
+          <th scope="row" class="align-middle">12:00 pm</th>
+          <td class="align-middle">
+            <textarea class="form-control" id="12pmMessage" rows="3"></textarea>
+          </td>
+          <td class="align-middle save-btn"><i class="fas fa-save" data-time="12pm"></i></td>
+        </tr>
+        <tr class="table-secondary tableRow" data-hour="13">
+          <th scope="row" class="align-middle">1:00 pm</th>
+          <td class="align-middle">
+            <textarea class="form-control" id="1pmMessage" rows="3"></textarea>
+          </td>
+          <td class="align-middle save-btn"><i class="fas fa-save" data-time="1pm"></i></td>
+        </tr>
+        <tr class="table-secondary tableRow" data-hour="14">
+          <th scope="row" class="align-middle">2:00 pm</th>
+          <td class="align-middle">
+            <textarea class="form-control" id="2pmMessage" rows="3"></textarea>
+          </td>
+          <td class="align-middle save-btn"><i class="fas fa-save" data-time="2pm"></i></td>
+        </tr>
+        <tr class="table-secondary tableRow" data-hour="15">
+          <th scope="row" class="align-middle">3:00 pm</th>
+          <td class="align-middle">
+            <textarea class="form-control" id="3pmMessage" rows="3"></textarea>
+          </td>
+          <td class="align-middle save-btn"><i class="fas fa-save" data-time="3pm"></i></td>
+        </tr>
+        <tr class="table-secondary tableRow" data-hour="16">
+          <th scope="row" class="align-middle">4:00 pm</th>
+          <td class="align-middle">
+            <textarea class="form-control" id="4pmMessage" rows="3"></textarea>
+          </td>
+          <td class="align-middle save-btn"><i class="fas fa-save" data-time="4pm"></i></td>
+        </tr>
+        <tr class="table-secondary tableRow" data-hour="17">
+          <th scope="row" class="align-middle">5:00 pm</th>
+          <td class="align-middle">
+            <textarea class="form-control" id="5pmMessage" rows="3"></textarea>
+          </td>
+          <td class="align-middle save-btn"><i class="fas fa-save" data-time="5pm"></i></td>
+        </tr>
+      </table>
+    </div>
+
+    </div>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="script.js"></script>
+</html>
