@@ -1,5 +1,5 @@
 function updateTime() {
-  var current_time = moment().calendar();
+  var current_time = moment().format("dddd, MMMM Do");
   $("#currentDay").text(current_time);
 
   $(".tableRow").each(function(){
