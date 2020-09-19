@@ -22,7 +22,6 @@ function updateTime() {
     else { 
       $(this).removeClass("present future").addClass("future");
     }
-
   });
 }
 
@@ -32,7 +31,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     var data_attribute = $(this).children().data("time");
-    var form = $("#"+ data_attribute +"Message");
+    var form = $("#" + data_attribute);
     var value = form.val();
     localStorage.setItem(data_attribute, value);
   });
@@ -41,5 +40,10 @@ $(document).ready(function() {
   setInterval(function () {
     updateTime();
   }, 10000);
+
+  $(".form-control").each(function(){
+    var id = $(this).attr('id');
+    $(this).val(localStorage.getItem(id));
+  });
 
 });
