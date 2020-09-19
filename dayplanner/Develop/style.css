@@ -42,18 +42,18 @@ textarea{
   border-top: 1px dashed #000000;
 }
 
-.past {
-  background-color: #d3d3d3;
+.past.tableRow.table-secondary .align-middle {
+  background-color: #AFFC41;
+  color: black;
+}
+
+.present.tableRow.table-secondary .align-middle{
+  background-color: #F0803C;
   color: white;
 }
 
-.present {
-  background-color: #ff6961;
-  color: white;
-}
-
-.future {
-  background-color: #77dd77;
+.future.tableRow.table-secondary .align-middle{
+  background-color: #816E94;
   color: white;
 }
 
@@ -68,8 +68,4 @@ textarea{
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
-}
-
-.fas fa-save {
-
 }

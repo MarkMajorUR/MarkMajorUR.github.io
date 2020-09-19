@@ -12,19 +12,17 @@ function updateTime() {
       hour += 12;
     }
 
+    // $(this) === The current element in the loop
     if (hour == data_attribute2) {
-        // present
-    } else if (hour > data_attribute2) {
-        // future
-    } else { 
-        // past
+      $(this).removeClass("past future").addClass("present");
+    } 
+    else if (hour > data_attribute2) {
+      $(this).removeClass("past present").addClass("past");
+    } 
+    else { 
+      $(this).removeClass("present future").addClass("future");
     }
 
-    // var split = current_time.split(" ");
-    // split = ["Today","at","7:23","PM"]
-    // var time = split[3];
-    // time = "12:30";
-    // time.split(":");
   });
 }
 
