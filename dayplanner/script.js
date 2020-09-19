@@ -4,11 +4,9 @@ function updateTime() {
 
   $(".tableRow").each(function(){
     var data_attribute2 = $(this).data("hour");
-    console.log(data_attribute2);
     var current_time2 = moment().format('LT');
     var split = current_time2.split(" ");
     var am_pm = split[1];
-    console.log(am_pm);
     var hour = split[0].split(":")[0];
     if (am_pm == "PM") {
       hour = parseInt(hour, 10)+12;
