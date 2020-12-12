@@ -1,0 +1,44 @@
+body {
+  background-color: whitesmoke;
+  background-image: url("./more-leaves-on-green.png");
+}
+
+.profile-pic {
+  margin-right: 16px;
+}
+
+.profile-pick {
+  max-width: 206px;
+  max-height: 200px;
+  float: left;
+  margin-right: 10px;
+}
+.card-header {
+  font-size: 60px;
+  font-weight: bold;
+  color: rgb(46, 121, 96);
+}
+.navbar-brand {
+  font-size: 30px;
+  background-color: rgb(46, 121, 96);
+  color: azure !important;
+}
+footer {
+  text-align: center;
+  background-color: grey;
+  border-style: solid none none none;
+  border-color: lightskyblue;
+  border-width: 10px  ;
+  color: azure;
+}
+
+.navbar-brand a {
+color: azure;
+}
+.navbar-text {
+  font-weight: bold;
+  font-size: 20px;
+}
+p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}

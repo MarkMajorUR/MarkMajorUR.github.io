@@ -1,1 +1,2 @@
-# MarkMajorUR.github.io
+# Portfolio
+This is my Portfolio homework assignment

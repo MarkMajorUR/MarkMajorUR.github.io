@@ -1,0 +1,67 @@
+body {
+  background-color: whitesmoke;
+  background-image: url("./more-leaves-on-green.png");
+}
+
+.card-body {
+  background-color: white;
+  margin-top: 70px;
+}
+ 
+.card-body__underline {
+  padding-bottom: 16px;
+  border-bottom: 2px solid #ebe7e1;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgb(46, 121, 96);
+}
+
+.pic-frame {
+  width: 100%;
+  
+
+  }
+.img-thumbnail {
+  width: 350px;
+  height: 350px;
+  margin-left: 0px;
+  margin-bottom: 30px;
+}
+
+footer {
+  text-align: center;
+  background-color: grey;
+  border-style: solid none none none;
+  border-color: lightskyblue;
+  border-width: 10px  ;
+}
+
+
+@media (min-width: 400px) {
+  .pic-frame {
+    width: 400px;
+    margin-left: 25px;
+}
+  .card-body {
+    max-width: 100%;
+  }
+
+}
+
+@media (min-width: 756px) {
+  .pic-frame {
+    width: 750px;
+    }
+  .card-body {
+    max-width: 65%;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-body {
+    max-width: 85%
+  }
+  .pic-frame {
+    margin-left: -2px
+  }
+}
